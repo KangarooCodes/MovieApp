@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="app.css">
+     <title>Movie App</title>
+</head>
+<body>
+     <div id="container">
+
+          <h1 class="title">Joey's Movie App</h1>
+
+          <form class="form">
+               <label for="title">Movie Title</label>
+               <input type="text" name="title" id="title" class="movie">
+       <br>
+               <label for="rating">Rating (0-10)</label>
+               <input name="rating" id="rating" min="0" max="10" maxlength="2" class="rating">
+       <br>
+               <button type="submit" class="btn">Submit Movie Rating</button>
+          </form>
+
+          <table class="table" style="width: 500px;">
+               <tbody class="body">
+                    <tr id="header">
+                         <th>Movie</th>
+                         <th>Rating</th>
+                         <th>Delete</th>
+                    </tr>
+                    <tr>
+                         <th></th>
+                         <th></th>
+                         <th></th>
+                    </tr>
+               </tbody>
+          </table>
+
+     </div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+     <script>  
+          ($('.rating').keyup(function () {  
+                    this.value = this.value.replace(/[^0-9\.]/g,'');
+                 }))   // Prevents non-numerics to not be added to rating
+
+          $('.btn').on('click', function(e){
+             e.preventDefault();
+             let inputs = document.querySelector('input');
+             let inputClear = document.querySelectorAll('input');
+             let ratingForm = document.querySelector('.rating')
+             const movieTitle = inputs.value;
+             const movieRating = ratingForm.value;
+
+             if(ratingForm.value > 10 || ratingForm.value < 0){
+                    return alert("Rating must be between 0 and 10! Please try again")
+               }
+
+             $('.table').append('<tr><td class="movie-list">' + movieTitle + '<td class="rated">' + movieRating + "/10" + '<td><button type="submit" class="delete" title="Click to remove this rating"'); // Dynamically appends row based on form inputs (and creates delete button) 
+
+             $('.delete').html('DELETE');  // gives delete button an "X" 
+
+
+             inputClear.forEach((inputClear) => (inputClear.value = ""))  // Clears form when 'submitted'
+          });
+          
+          $('table').on('click', function(e){        // Deletes Row on click of "X" button
+               if(e.target.className == "delete") {
+               e.target.closest('tr').remove()
+               };
+          });     
+
+     </script>
+
+     <script src="app.js"></script>
+</body>
+</html>

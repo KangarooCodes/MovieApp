@@ -1,0 +1,82 @@
+html {
+     background-color: rgb(58, 58, 58);
+}
+
+h1 {
+     font-size: 2.5rem;
+     color: antiquewhite;
+     text-shadow: aliceblue 1px 1px 2px;
+     text-decoration: underline;
+     text-decoration-color: azure;
+}
+
+table {
+     text-align: center;
+     font-size: large;
+     border: 2px solid black;
+}
+
+th {
+     border-bottom: 1px solid black;
+}
+
+.btn {
+     margin-top: 5px;
+     padding: 8px;
+     margin-bottom: 15px;
+}
+
+#title {
+     width: 100px;
+     padding-top: 2px;
+     padding-bottom: 2px;
+}
+
+.form {
+     color: rgb(255, 255, 255); font-family: Tahoma,Verdana,Segoe,sans-serif; 
+     font-size: larger;
+}
+
+#rating {
+     padding: 3px;
+}
+
+input {
+     width: 15px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+
+td .delete {
+     text-align: center;
+     font-weight: bolder;
+     font-size: 10px;
+     color: rgb(110, 110, 110);
+     background: rgb(0,255,102);
+     border: rgb(0,255,102) solid 2px;
+     height: 35px;
+     z-index: 1;
+     border-radius: 10%;
+     width: 100%;
+}
+
+td .delete:hover {
+     color: red;
+     background-color: rgb(200, 200, 200);
+}
+
+#header {
+     text-transform: uppercase;
+     letter-spacing: 2%;
+     font-size: 1.4rem;
+     background: rgb(0,255,255);
+     background: linear-gradient(167deg, rgba(0,255,255,1) 10%, rgba(0,255,255,1) 35%, rgba(0,255,194,1) 45%, rgba(0,255,102,1) 71%, rgba(0,255,102,1) 93%);
+}
+
+tbody tr:nth-child(n+3) {
+     background-color: rgb(0, 255, 102);
+}
+
+tbody tr:nth-child(even) {
+     background-color: aqua;
+}
